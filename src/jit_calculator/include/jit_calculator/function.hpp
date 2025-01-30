@@ -53,6 +53,6 @@ public:
         for (auto i = usize{ 0 }; i < function.m_buffer.get_deleter().size; ++i) {
             ostream << std::setw(2) << static_cast<u32>(reinterpret_cast<u8*>(function.m_buffer.get())[i]) << ' ';
         }
-        return ostream;
+        return ostream << std::dec;
     }
 };
