@@ -1,0 +1,39 @@
+add_library(
+        jit_calculator
+        jit_calculator.cpp
+        include/jit_calculator/jit_calculator.hpp
+        include/jit_calculator/function.hpp
+        include/jit_calculator/token.hpp
+        include/jit_calculator/token_type.hpp
+        include/jit_calculator/lexer.hpp
+        lexer.cpp
+        include/jit_calculator/parser.hpp
+        include/jit_calculator/expression.hpp
+        expression.cpp
+        parser.cpp
+        include/jit_calculator/precedence.hpp
+        utils.hpp
+        include/jit_calculator/instruction.hpp
+        include/jit_calculator/assembler.hpp
+        assembler.cpp
+        x86_x64_system_v_assembler.hpp
+        x86_x64_system_v_assembler.cpp
+)
+
+target_include_directories(
+        jit_calculator
+        PUBLIC
+        include
+)
+
+target_link_libraries(
+        jit_calculator
+        PUBLIC
+        jit_calculator_project_options
+)
+
+target_link_system_libraries(
+        jit_calculator
+        PUBLIC
+        lib2k
+)
